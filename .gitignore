@@ -1,0 +1,20 @@
+# Python-specific ignores
+*.pyc
+__pycache__/
+
+# Robot Framework-specific ignores
+output.xml
+log.html
+report.html
+debug.log
+
+# IDE-specific files and directories
+.vscode/
+.idea/
+
+# Test output directory
+results/
+
+# Other ignores
+*.bak
+*.swp
