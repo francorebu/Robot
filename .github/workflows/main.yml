@@ -24,7 +24,7 @@ jobs:
           pip install robotframework==4.1.2
           pip install selenium==4.9.1
           pip install robotframework-seleniumlibrary==5.1.0
-          pip install webdrivermanager==0.11.1
+          pip install webdrivermanager==0.10.0
 
       - name: Install Chrome WebDriver
         run: |
