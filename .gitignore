@@ -13,7 +13,7 @@ debug.log
 .idea/
 
 # Test output directory
-results/
+results/*
 
 # Other ignores
 *.bak
