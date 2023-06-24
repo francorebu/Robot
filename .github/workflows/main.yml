@@ -2,10 +2,8 @@ name: Robot Framework Tests
 
 on:
   schedule:
-    - cron: "0 9 * * *"
-  repository_dispatch:
-    types:
-      - run-tests
+    - cron: '0 9 * * *'
+  workflow_dispatch:
 
 jobs:
   build:
