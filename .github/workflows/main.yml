@@ -1,0 +1,37 @@
+name: Robot Framework Tests
+
+on:
+  schedule:
+    - cron: "0 9 * * *"
+  repository_dispatch:
+    types:
+      - run-tests
+
+jobs:
+  build:
+    runs-on: windows-latest
+
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@v2
+
+      - name: Set up Python
+        uses: actions/setup-python@v2
+        with:
+          python-version: "3.10.5"  # Specify the Python version you want to use
+
+      - name: Install dependencies
+        run: |
+          pip install --upgrade pip
+          pip install robotframework==4.1.2
+          pip install selenium==4.9.1
+          pip install robotframework-seleniumlibrary==5.1.0
+          pip install webdrivermanager==0.11.1
+
+      - name: Install Chrome WebDriver
+        run: |
+          webdrivermanager chrome
+
+      - name: Run Robot Framework tests
+        run: |
+          robot --outputdir results .
